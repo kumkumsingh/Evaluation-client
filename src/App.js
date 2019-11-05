@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
+import store from './store'
+import { Provider } from 'react-redux'
+import { Route } from 'react-router-dom'
+import LogInFormComponent from './components/LogInFormComponent'
+import ClassFormContainer from './components/ClassFormContainer'
 import './App.css';
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>Student Evaluations</h1>
+    <Route path="/" exact component={LogInFormComponent} />
+    <Route path="/class" exact component={ClassFormContainer} />
     </div>
+    </Provider>
   );
 }
 
