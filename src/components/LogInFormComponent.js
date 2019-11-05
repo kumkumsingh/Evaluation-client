@@ -39,7 +39,7 @@ class LogInFormComponent extends Component {
       console.log('checking props',this.props.loggedIn)
     return this.props.loggedIn ? (
         // If we have a token, redirect to Home
-        <Redirect to="/class" />
+        <Redirect to="/batch" />
       ):(
         <div>
           <p>{this.state.message}</p>
