@@ -6,15 +6,17 @@ export default function ClassForm(props) {
   if (!props.batches) return "Loading";
   return (
     <div>
-      {props.batches.map(data => {
+      {props.batches.map(batch => {
         return (
-          <li key={data.id} className="list-group-item">
-            <Link to={`/batch/${data.id}`}>Batch No:{data.batchNo}</Link>
-            <br></br> Start Date:{data.stDate} <br></br>
-            End Date: {data.endDate}
+          <li key={batch.id} className="list-group-item">
+            <Link to={`/batch/${batch.id}`}>Batch No:{batch.batchNo}</Link>
+            <br></br> Start Date:{batch.stDate} <br></br>
+            End Date: {batch.endDate}
           </li>
+      
         );
       })}
+        {/* <button className="btn btn-primary"> CreateBatch</button> */}
     </div>
   );
 }
