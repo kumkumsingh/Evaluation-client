@@ -4,6 +4,7 @@ import {fetchBatch} from '../actions/batch'
 import ClassDetail from './ClassDetail'
 
 class ClassDetailsContainer extends Component {
+   
     componentDidMount(){
         const id = this.props.match.params.id
         this.props.fetchBatch(id)
@@ -24,5 +25,5 @@ const mapStateToProps = state => {
   };
 export default connect(
     mapStateToProps,
-    { fetchBatch }
+    { fetchBatch}
   )(ClassDetailsContainer);

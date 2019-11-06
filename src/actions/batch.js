@@ -60,3 +60,24 @@ export const fetchBatch = (id) => dispatch => {
         .catch(console.error)
 }
 
+// ------------Update particular student --------
+export const STUDENT_UPDATE_SUCCESS = 'STUDENT_UPDATE_SUCCESS'
+
+const studentUpdateSuccess = student => ({
+    type: STUDENT_UPDATE_SUCCESS,
+    payload: student
+})
+
+export const UpdateStudent = (id, fullname) => (dispatch, getState) => {
+
+    const token = getState().Login.jwt;
+    request
+        .put(`${baseUrl}/student/${id}`)
+        .send(fullname)
+        .then(response => {
+            dispatch(studentUpdateSuccess(response.body))
+            console.log('checking response in updateteam',response.body)
+           
+        })
+        .catch(console.error)
+}

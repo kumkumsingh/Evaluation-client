@@ -20,3 +20,27 @@ export const createStudent = data => (dispatch, getState) => {
       })
       .catch(console.error);
   };
+
+
+// ----------- Delete a student ----------------
+export const STUDENT_DELETE_SUCCESS = 'STUDENT_DELETE_SUCCESS'
+
+const studentDeleteSuccess = id => ({
+    type: STUDENT_DELETE_SUCCESS,
+    payload: id
+
+})
+
+export const deleteStudent = (id) => (dispatch, getState) => {
+    const token = getState().Login.jwt;
+    request
+        .delete(`${baseUrl}/student/${id}`)
+        .set("Authorization", `Bearer ${token}`)
+        .then(response => {
+            console.log(response.body)
+            console.log('checking id ', id)
+            dispatch(studentDeleteSuccess(id))
+
+        })
+        .catch(console.error)
+}

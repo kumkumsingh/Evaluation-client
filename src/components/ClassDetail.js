@@ -14,6 +14,7 @@ export default function ClassDetail(props) {
                 <Link to={`/student/${student.id}`}><img src = {student.imgUrl} alt="Not available"/></Link>
                 </li>
             })}</ul>}
+            
         </div>
     )
 }
