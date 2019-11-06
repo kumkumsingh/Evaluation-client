@@ -8,6 +8,7 @@ import SignUpFormContainer from './components/SignUpFormContainer'
 import Home from './components/Home'
 import CreateBatchFormContainer from './components/CreateBatchFormContainer'
 import ClassDetailsContainer from './components/ClassDetailsContainer'
+import AddStudentFormContainer from './components/AddStudentFormContainer'
 import './App.css';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Route path="/batch" exact component={ClassFormContainer} />
     <Route path="/batch" exact component={CreateBatchFormContainer} />
     <Route path="/batch/:id" exact component={ClassDetailsContainer} />
+    <Route path="/batch/:id" exact component={AddStudentFormContainer} />
     </div>
     </Provider>
   );

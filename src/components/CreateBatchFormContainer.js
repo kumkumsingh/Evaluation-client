@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 
 class CreateBatchFormContainer extends Component {
+    //this component is for creating a class 
   state = {
     batchNo: "",
     stDate: new Date(),

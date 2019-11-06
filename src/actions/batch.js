@@ -40,7 +40,7 @@ export const createbatch = (data) => (dispatch, getState) => {
         .catch(console.error)
 }
 
-// ------------- fetch single batch detail------------------
+// ------------- fetch a single batch detail------------------
 export const BATCH_FETCHED = 'BATCH_FETCHED'
 
 const batchDetail = batch => ({
@@ -59,3 +59,4 @@ export const fetchBatch = (id) => dispatch => {
         })
         .catch(console.error)
 }
+

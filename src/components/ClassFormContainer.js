@@ -4,6 +4,7 @@ import { loadBatches } from "../actions/batch";
 import { connect } from "react-redux";
 
 class ClassFormContainer extends Component {
+  //this component have the list of batches or Classes
   componentDidMount() {
 
     this.props.loadBatches();

@@ -16,7 +16,6 @@ export default function ClassForm(props) {
       
         );
       })}
-        {/* <button className="btn btn-primary"> CreateBatch</button> */}
     </div>
   );
 }
