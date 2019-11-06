@@ -27,11 +27,11 @@ const batchCreateSuccess = batch => ({
 })
 
 export const createbatch = (data) => (dispatch, getState) => {
-    const token = getState().Login;
+    const token = getState().Login.jwt;
     console.log('checking token',token)
     request
         .post(`${baseUrl}/batch`)
-        //.set("Authorization", `Bearer ${token}`)
+        .set("Authorization", `Bearer ${token}`)
         .send(data)
         .then(response => {
             console.log('checking response',response)

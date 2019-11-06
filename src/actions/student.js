@@ -9,11 +9,11 @@ const studentCreateSuccess = student => ({
   });
 
 export const createStudent = data => (dispatch, getState) => {
-    const token = getState().auth;
+    const token = getState().Login.jwt;
     console.log('checking data',data,token)
     request
       .post(`${baseUrl}/student`)
-      //.set("Authorization", `Bearer ${token}`)
+      .set("Authorization", `Bearer ${token}`)
       .send(data)
       .then(response => {
         dispatch(studentCreateSuccess(response.body));
