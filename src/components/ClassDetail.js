@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 export default function ClassDetail(props) {
     //having the list of students in a class  
@@ -9,8 +10,8 @@ export default function ClassDetail(props) {
              <p>{`Batch Number: ${props.batch.batchNo}`}</p>
             <p>List of Students</p>
             {props.batch.batchNo && <ul>{props.batch.students.map((student, index) => {
-                return <li key={index} className="list-group-item">{student.fullName}
-                <img src = {student.imgUrl} alt="Not available"/>
+                return <li key={index} className="list-group-item"><Link to={`/student/${student.id}`}>{student.fullName}</Link>
+                <Link to={`/student/${student.id}`}><img src = {student.imgUrl} alt="Not available"/></Link>
                 </li>
             })}</ul>}
         </div>
