@@ -5,6 +5,7 @@ import Batches from './Batches'
 import Batch from './Batch'
 import Count from './Count'
 import Profile from './Profile'
+import RandomStudent from './RandomStudent'
 
 export default combineReducers({
   // reducers will go here
@@ -13,5 +14,6 @@ export default combineReducers({
   Batches,
   Batch,
   Count,
-  Profile
+  Profile,
+  RandomStudent
 })

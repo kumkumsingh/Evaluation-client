@@ -5,14 +5,14 @@ export default class StudentProfileForm extends Component {
     console.log("sddcd", this.props);
     return (
       <div>
-        <form  onSubmit={this.props.onSubmit}>
+        <form onSubmit={this.props.onSubmit}>
           <label>Enter Remarks</label>
           <input
             name="remarks"
             value={this.props.values.remarks}
             onChange={this.props.onChange}
           ></input>
-          <label>Updated Date</label>
+          <label>Daily Evaluation for [dd]/[mm]/[yyyy]</label>
           <input
             name="UpdatedDate"
             type="Date"
@@ -21,7 +21,6 @@ export default class StudentProfileForm extends Component {
           <br></br>
           <br></br>
           <div>
-            <label>Evaluate</label>
             <input
               type="button"
               className="btn btn-danger"
@@ -43,12 +42,12 @@ export default class StudentProfileForm extends Component {
           </div>
           <br></br>
 
-          <button
-            type="submit"
-            className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Save
           </button>
-          {/* <button type="button" class="btn btn-primary">Save and Next</button> */}
+          <button type="submit" class="btn btn-primary">
+            Save and Next
+          </button>
         </form>
       </div>
     );
