@@ -51,8 +51,8 @@ export const COLOR_COUNT_FETCHED = 'COLOR_COUNT_FETCHED'
     type: COLOR_COUNT_FETCHED,
     payload: count
 })
-export const colorCount = () => (dispatch) => {
-    request(`${baseUrl}/student/percentage`)
+export const colorCount = (id) => (dispatch) => {
+    request(`${baseUrl}/student/percentage/${id}`)
         .then(response => {
             
             dispatch(colorFetched(response.body))

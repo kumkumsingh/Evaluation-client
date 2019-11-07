@@ -15,10 +15,11 @@ class ClassDetailsContainer extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     this.props.fetchBatch(id);
-    this.props.colorCount();
+    this.props.colorCount(id);
   }
   onClick = () => {
-    this.props.randomStudentSelected();
+    const id = this.props.match.params.id;
+    this.props.randomStudentSelected(id);
     this.setState({
       askedQuestionClicked: true
     });

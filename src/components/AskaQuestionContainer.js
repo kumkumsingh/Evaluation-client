@@ -3,7 +3,7 @@ import React from "react";
 
 export default function AskaQuestionContainer(props) {
 
-   console.log('checking props in AskaQuestionContainer',props.RandomStudent[0])
+   console.log('checking props in AskaQuestionContainer',props.RandomStudent)
    if (!props.RandomStudent) return 'Loading'
    return (
        <div>

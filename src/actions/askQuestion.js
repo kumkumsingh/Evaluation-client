@@ -7,13 +7,13 @@ export const RANDOM_STUDENT_SELECTED = 'RANDOM_STUDENT_SELECTED'
     type: RANDOM_STUDENT_SELECTED,
     payload: randomStudent
 })
-export const randomStudentSelected = data => (dispatch, getState) => {
+export const randomStudentSelected = id => (dispatch, getState) => {
     //const token = getState().Login.jwt;
     //console.log('checking data',data,token)
     request
-      .get(`${baseUrl}/student/random`)
+      .get(`${baseUrl}/student/random/${id}`)
       //.set("Authorization", `Bearer ${token}`)
-      .send(data)
+      //.send(data)
       .then(response => {
         dispatch(randomStudent(response.body));
       })
