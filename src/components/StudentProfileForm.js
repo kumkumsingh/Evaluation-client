@@ -1,22 +1,56 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class StudentProfileForm extends Component {
-    render() {
-        return (
-            <div>
-                <form>
-                    <label>Enter Remarks</label>
-                    <input name="remarks"></input>
-                   <div>
-                   <label>Evaluate</label>
-                   <button type="button" class="btn btn-danger"></button>
-                   <button type="button" class="btn btn-warning"></button>
-                   <button type="button" class="btn btn-success"></button>
-                   </div><br></br>
-                   <button type="button" class="btn btn-primary">Save</button>
-                   <button type="button" class="btn btn-primary">Save and Next</button>
-                </form>
-            </div>
-        )
-    }
+  render() {
+    console.log("sddcd", this.props);
+    return (
+      <div>
+        <form  onSubmit={this.props.onSubmit}>
+          <label>Enter Remarks</label>
+          <input
+            name="remarks"
+            value={this.props.values.remarks}
+            onChange={this.props.onChange}
+          ></input>
+          <label>Updated Date</label>
+          <input
+            name="UpdatedDate"
+            type="Date"
+            onChange={this.props.onChange}
+          ></input>
+          <br></br>
+          <br></br>
+          <div>
+            <label>Evaluate</label>
+            <input
+              type="button"
+              className="btn btn-danger"
+              onClick={this.props.onClickRed}
+              value="RED"
+            ></input>
+            <input
+              type="button"
+              className="btn btn-warning"
+              onClick={this.props.onClickYellow}
+              value="YELLOW"
+            ></input>
+            <input
+              type="button"
+              className="btn btn-success"
+              onClick={this.props.onClickGreen}
+              value="GREEN"
+            ></input>
+          </div>
+          <br></br>
+
+          <button
+            type="submit"
+            className="btn btn-primary">
+            Save
+          </button>
+          {/* <button type="button" class="btn btn-primary">Save and Next</button> */}
+        </form>
+      </div>
+    );
+  }
 }

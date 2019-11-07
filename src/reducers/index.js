@@ -4,6 +4,7 @@ import SignMessage from './SignMessage'
 import Batches from './Batches'
 import Batch from './Batch'
 import Count from './Count'
+import Profile from './Profile'
 
 export default combineReducers({
   // reducers will go here
@@ -11,5 +12,6 @@ export default combineReducers({
   SignMessage,
   Batches,
   Batch,
-  Count
+  Count,
+  Profile
 })

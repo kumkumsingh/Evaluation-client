@@ -28,12 +28,7 @@ class LogInFormComponent extends Component {
         message: ""
       });
     }
-    // console.log('checking login',this.props.logIn)
-    // if(this.props.logIn){
-    // setTimeout(() => {
-    //     this.props.history.push('/class')
-    //    }, 2500);
-    // }
+  
   };
   render() {
       console.log('checking props',this.props.loggedIn)
