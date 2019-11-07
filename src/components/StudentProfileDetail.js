@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
 import  { deleteStudent } from '../actions/student'
+
 import { Redirect } from 'react-router-dom'
+import StudentProfileForm from './StudentProfileForm'
 
  class StudentProfileDetail extends Component {
+    
     state = {
         deleted: false
     }
@@ -19,6 +22,7 @@ import { Redirect } from 'react-router-dom'
         }
         return (
             <div>
+            <StudentProfileForm/><br></br>
             <button className="btn btn-primary" onClick={this.onDelete}>Delete Student</button> 
             </div>
         )
@@ -26,5 +30,5 @@ import { Redirect } from 'react-router-dom'
 }
 export default connect(
     null,
-    { deleteStudent }
+    { deleteStudent}
   )(StudentProfileDetail);

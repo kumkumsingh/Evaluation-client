@@ -44,3 +44,18 @@ export const deleteStudent = (id) => (dispatch, getState) => {
         })
         .catch(console.error)
 }
+
+//-----------Fetch count of how many students have green or yellow or red color band----
+export const COLOR_COUNT_FETCHED = 'COLOR_COUNT_FETCHED'
+ const colorFetched = count => ({
+    type: COLOR_COUNT_FETCHED,
+    payload: count
+})
+export const colorCount = () => (dispatch) => {
+    request(`${baseUrl}/student/percentage`)
+        .then(response => {
+            
+            dispatch(colorFetched(response.body))
+        })
+        .catch(console.error)
+}

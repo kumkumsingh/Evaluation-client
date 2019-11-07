@@ -11,10 +11,9 @@ export default (state = {}, action = {}) => {
                 students: [...state.students, action.payload]
             }
             case STUDENT_DELETE_SUCCESS:
-                console.log('checking my state and id',state,action.payload)
-
-                    return state.students.filter(student => student.id !== action.payload)
-            //return state.filter(team => team.id !== action.payload);
+        
+                return {...state,students:state.students.filter(student => student.id !== action.payload)}
+                    
             default:
             return state
     }

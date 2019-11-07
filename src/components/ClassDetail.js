@@ -12,6 +12,7 @@ export default function ClassDetail(props) {
             {props.batch.batchNo && <ul>{props.batch.students.map((student, index) => {
                 return <li key={index} className="list-group-item"><Link to={`/student/${student.id}`}>{student.fullName}</Link>
                 <Link to={`/student/${student.id}`}><img src = {student.imgUrl} alt="Not available"/></Link>
+                {student.lstCode}
                 </li>
             })}</ul>}
             
