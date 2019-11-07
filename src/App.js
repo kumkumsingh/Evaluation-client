@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React  from 'react'
 import store from './store'
 import { Provider } from 'react-redux'
 import { Route } from 'react-router-dom'
@@ -10,6 +10,7 @@ import CreateBatchFormContainer from './components/CreateBatchFormContainer'
 import ClassDetailsContainer from './components/ClassDetailsContainer'
 import AddStudentFormContainer from './components/AddStudentFormContainer'
 import StudentProfileDetail from './components/StudentProfileDetail'
+import AskaQuestionContainer from './components/AskaQuestionContainer'
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <Route path="/batch/:id" exact component={ClassDetailsContainer} />
     <Route path="/batch/:id" exact component={AddStudentFormContainer} />
     <Route path="/student/:id" exact component={StudentProfileDetail} />
+    <Route path="/question/student" exact component={AskaQuestionContainer} />
     </div>
     </Provider>
   );
