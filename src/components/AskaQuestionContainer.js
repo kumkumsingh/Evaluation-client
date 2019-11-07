@@ -5,11 +5,10 @@ export default class AskaQuestionContainer extends Component {
     selectedStudent: ""
   };
   render() {
-      console.log(
+    console.log(
       "checking props in AskaQuestionContainer",
       this.props.randomSelectedStudent
     );
-
     return (
       <div>
         <label>Selected Student is :{this.state.selectedStudent}</label>
