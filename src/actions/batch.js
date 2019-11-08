@@ -7,10 +7,6 @@ export const BATCHES_FETCHED = 'BATCHES_FETCHED'
     payload: batches
 })
 export const loadBatches = () => (dispatch) => {
-    // when the state already contains classes, we don't fetch them again
-   // if (getState().classes.length !== 0) return
-
-    // a GET /classes request
     request(`${baseUrl}/batch`)
         .then(response => {
             
@@ -49,10 +45,11 @@ const batchDetail = batch => ({
 
 })
 
-export const fetchBatch = (id) => dispatch => {
-
+export const fetchBatch = (id) => (dispatch, getState) => {
+    const token = getState().Login.jwt;
     request
         .get(`${baseUrl}/batch/${id}`)
+        .set("Authorization", `Bearer ${token}`)
         .then(response => {
             dispatch(batchDetail(response.body))
             console.log(response.body)
@@ -73,6 +70,7 @@ export const UpdateStudent = (id, fullname) => (dispatch, getState) => {
     const token = getState().Login.jwt;
     request
         .put(`${baseUrl}/student/${id}`)
+        .set("Authorization", `Bearer ${token}`)
         .send(fullname)
         .then(response => {
             dispatch(studentUpdateSuccess(response.body))

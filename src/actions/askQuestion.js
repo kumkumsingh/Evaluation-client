@@ -8,11 +8,11 @@ export const RANDOM_STUDENT_SELECTED = 'RANDOM_STUDENT_SELECTED'
     payload: randomStudent
 })
 export const randomStudentSelected = id => (dispatch, getState) => {
-    //const token = getState().Login.jwt;
+    const token = getState().Login.jwt;
     //console.log('checking data',data,token)
     request
       .get(`${baseUrl}/student/random/${id}`)
-      //.set("Authorization", `Bearer ${token}`)
+      .set("Authorization", `Bearer ${token}`)
       //.send(data)
       .then(response => {
         dispatch(randomStudent(response.body));
