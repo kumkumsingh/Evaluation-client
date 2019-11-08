@@ -45,7 +45,7 @@ export default class StudentProfileForm extends Component {
           <button type="submit" className="btn btn-primary">
             Save
           </button>
-          <button type="submit" class="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             Save and Next
           </button>
         </form>

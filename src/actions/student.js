@@ -59,3 +59,24 @@ export const colorCount = (id) => (dispatch) => {
         })
         .catch(console.error)
 }
+
+// ------------- update a student table on creating a profile or updating it------------------
+export const STUDENT_UPDATE_SUCCESS = 'STUDENT_UPDATE_SUCCESS'
+
+const studentUpdateSuccess = student => ({
+    type: STUDENT_UPDATE_SUCCESS,
+    payload: student
+
+})
+
+export const studentUpdate = (id,lstCode) => dispatch => {
+    console.log('displaying id, lstCode ',id, lstCode);
+    request
+        .put(`${baseUrl}/student/${id}`)
+        .send(lstCode)
+        .then(response => {
+            dispatch(studentUpdateSuccess(response.body))
+            console.log(response.body)
+        })
+        .catch(console.error)
+}
